@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: red;
+    overflow: hidden;
+}
+
+.gameContainer {
+    background-image: url(bg.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    width: 100%;
+    height: 100vh;
+}
+
+.dragon {
+    background-image: url(dragon.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 190px;
+    height: 120px;
+    position: absolute;
+    bottom: 0;
+    left: 52px;
+
+}
+
+.obstacle {
+    background-image: url(mountain.png);
+    background-size: cover;
+    width: 190px;
+    height: 187px;
+    position: absolute;
+    bottom: -34px;
+    left: 44vw;
+}
+
+.animateDragon {
+    animation: dragon 1.2s linear;
+}
+
+.obstacleAni {
+    animation: obstacleAni 3s linear infinite;
+}
+
+.gameOver {
+    visibility: hidden;
+    text-align: center;
+    color: #030101;
+    position: relative;
+    top: 376px;
+    left: 482px;
+    border: solid 2px rgb(16, 10, 10);
+    border-radius: 7px;
+    width: 600px;
+    font-size: 100px;
+    font-family: sans-serif;
+}
+
+/* start of button css */
+.gameOB {
+    appearance: button;
+    background-color: #000;
+    background-image: none;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0 5px 10px 0;
+    overflow: visible;
+    padding: 12px 40px;
+    text-align: center;
+    text-transform: none;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  
+  .gameOB:focus {
+    text-decoration: none;
+  }
+  
+  .gameOB:hover {
+    text-decoration: none;
+  }
+  
+  .gameOB:active {
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+    outline: 0;
+  }
+  
+  .gameOB:not([disabled]):active {
+    box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+    transform: translate(2px, 2px);
+  }
+  
+  @media (min-width: 768px) {
+    .gameOB {
+      padding: 12px 50px;
+    }
+  }
+  /* end of button css */
+
+#scoreCont {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    right: 23px;
+    top: 23px;
+    border: 2px solid white;
+    border-radius: 7px;
+    padding: 10px;
+    font-family: sans-serif;
+    width: 112px;
+}
+
+
+@keyframes dragon {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: 300px;
+    }
+
+    75% {
+        bottom: 100px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes obstacleAni {
+    0% {
+        left: 100vw;
+    }
+
+    100% {
+        left: -10vw;
+    }
+}
